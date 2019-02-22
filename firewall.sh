@@ -3,7 +3,7 @@
 TABLE=f3nsub
 
 # get networks
-networks=$(curl -s https://sub.f3netze.de/api.php?abfrage=all | jq -r '.[].ip')
+networks=$(curl -s https://sub.f3netze.de/api.php?query=allowed | jq -r '.[].ip')
 
 if [ -z "$networks" ]; then
 	echo "ERROR: Got no networks!" >&2
